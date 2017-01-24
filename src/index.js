@@ -1,2 +1,3 @@
+import React from 'react'
 
-export const f1 = a => a * a
+export const createForm = () => () => <p>This is not a form yet</p>

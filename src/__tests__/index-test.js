@@ -1,7 +1,11 @@
-import { f1 } from '../'
+import { shallow } from 'enzyme'
+import React from 'react'
+import { createForm } from '../'
 
-describe('f1', () => {
+describe('createForm', () => {
   it('does the dummy thing', () => {
-    expect(f1(2)).toBe(4)
+    const Form = createForm()
+    const rendered = shallow(<Form />)
+    expect(rendered.text()).toEqual('This is not a form yet')
   })
 })
