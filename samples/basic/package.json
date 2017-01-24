@@ -1,0 +1,26 @@
+{
+  "name": "u5-forms-example-basic",
+  "version": "1.0.0",
+  "description": "Basic example on how to use u5-forms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server"
+  },
+  "author": "Chris Oloff <chris@uber5.com> (http://about.uber5.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "material-ui": "0.16.7",
+    "react": "15.4.2",
+    "redux": "3.6.0",
+    "u5-forms": "0.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "6.22.1",
+    "babel-loader": "6.2.10",
+    "babel-preset-es2015": "6.22.0",
+    "babel-preset-react": "6.22.0",
+    "webpack": "1.14.0",
+    "webpack-dev-server": "1.16.2"
+  }
+}
