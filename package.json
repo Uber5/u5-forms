@@ -38,6 +38,7 @@
     "enzyme": "2.7.1",
     "jest": "18.1.0",
     "react-addons-test-utils": "15.4.2",
+    "react-test-renderer": "15.4.2",
     "rimraf": "2.5.4",
     "source-map-support": "0.4.10"
   },

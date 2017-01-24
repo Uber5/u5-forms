@@ -1,24 +1,18 @@
-import { shallow, mount } from 'enzyme'
 import React from 'react'
-import RaisedButton from 'material-ui/RaisedButton'
+import { shallow, mount } from 'enzyme' // TODO: still want to use it?
 
 import { createForm, createAddForm } from '../'
 
-// Should go to some SETUP
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-const mountWithContext = (node) => mount(node, {
-  context: {
-    muiTheme: getMuiTheme(),
-  },
-  childContextTypes: {
-    muiTheme: React.PropTypes.object.isRequired,
-  }
-});
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import renderer from 'react-test-renderer'
 
-injectTapEventPlugin();
-// END SETUP
-
+// TODO: should be in *another* place
+// import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+const render = component => {
+  const wrapped = <MuiThemeProvider>{ component }</MuiThemeProvider>
+  return renderer.create(wrapped)
+}
+// END TODO
 
 describe('createForm', () => {
   it('does the dummy thing', () => {
@@ -32,9 +26,7 @@ describe('createAddForm', () => {
   it('renders a submit button with the label provided', () => {
     const labelText = 'Submit it, now...'
     const Form = createAddForm({ submitLabel: labelText })
-    const wrapper = mountWithContext(<Form />)
-    console.log('wrapper.html', wrapper.html())
-    const button = wrapper.find(RaisedButton)
-    expect(button.label).toBe(labelText)
+    const tree = render(<Form />)
+    expect(tree).toMatchSnapshot()
   })
 })
