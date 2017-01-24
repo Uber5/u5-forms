@@ -57,6 +57,7 @@
     ]
   },
   "jest": {
-    "rootDir": "src"
+    "rootDir": "src",
+    "setupTestFrameworkScriptFile": "../test/setup.js"
   }
 }

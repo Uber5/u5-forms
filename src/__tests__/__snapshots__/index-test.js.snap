@@ -78,7 +78,7 @@ exports[`createAddForm renders a submit button with the label provided 1`] = `
               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
             }
           }>
-          huh (where is the label)
+          submit
         </div>
       </div>
     </button>
