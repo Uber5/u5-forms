@@ -1,7 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import injectTapEventPlugin from 'react-tap-event-plugin'
 
-import { createForm } from 'u5-forms'
+import { createAddForm } from 'u5-forms'
 
-const Form = createForm()
-ReactDOM.render(<Form />, document.getElementById('app'))
+injectTapEventPlugin()
+
+const Form = createAddForm({ submitLabel: 'Submit me...' })
+
+const App = () => <MuiThemeProvider>
+  <Form />
+</MuiThemeProvider>
+
+ReactDOM.render(<App />, document.getElementById('app'))

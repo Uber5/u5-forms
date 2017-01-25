@@ -1,3 +1,4 @@
+const path = require('path')
 module.exports = {
   entry: {
     app: './src'
@@ -24,5 +25,7 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  // resolve: { fallback: path.join(__dirname, "node_modules") },
+  // resolveLoader: { fallback: path.join(__dirname, "node_modules") }
 }
