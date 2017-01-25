@@ -1,13 +1,15 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme' // TODO: still want to use it?
 
-import { createForm, createAddForm } from '../'
+import { createAddForm } from '../'
 
 describe('createForm', () => {
-  it('does the dummy thing', () => {
-    const Form = createForm()
+
+  // A somewhat pointless test, just to demonstrate we can use shallow rendering
+  it('with no options, renders a "RaisedButton"', () => {
+    const Form = createAddForm({})
     const rendered = shallow(<Form />)
-    expect(rendered.text()).toMatch(/This is not/)
+    expect(rendered.text()).toMatch(/RaisedButton/)
   })
 })
 
