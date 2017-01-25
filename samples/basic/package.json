@@ -10,12 +10,8 @@
   "author": "Chris Oloff <chris@uber5.com> (http://about.uber5.com/)",
   "license": "MIT",
   "dependencies": {
-    "material-ui": "0.16.7",
-    "react": "15.4.2",
-    "react-dom": "15.4.2",
-    "react-redux": "5.0.2",
-    "react-tap-event-plugin": "2.0.1",
-    "redux": "3.6.0"
+    "babel-polyfill": "6.22.0",
+    "u5-forms": "0.0.5"
   },
   "devDependencies": {
     "babel-core": "6.22.1",

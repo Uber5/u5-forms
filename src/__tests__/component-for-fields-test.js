@@ -30,7 +30,9 @@ describe('componentForFields', () => {
       form: 'test',
       store: mockStore({})
     })(() => <Component />)
-    const rendered = render(<Provider store={mockStore({})} ><Form /></Provider>)
+    const render2 = el => render(<Provider store={mockStore({})} >{el}</Provider>)
+    // const rendered = render(<Provider store={mockStore({})} ><Form /></Provider>)
+    const rendered = render2(<Form />)
     expect(rendered).toMatchSnapshot()
   })
 })
