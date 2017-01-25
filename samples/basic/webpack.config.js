@@ -26,6 +26,6 @@ module.exports = {
       }
     ]
   },
-  // resolve: { fallback: path.join(__dirname, "node_modules") },
-  // resolveLoader: { fallback: path.join(__dirname, "node_modules") }
+  resolve: { fallback: path.join(__dirname, "node_modules") },
+  resolveLoader: { fallback: path.join(__dirname, "node_modules") }
 }

@@ -1,6 +1,9 @@
 import React from 'react'
-
+import { Provider } from 'react-redux'
+import { reduxForm } from 'redux-form'
 import { componentForFields } from '../'
+
+import configureMockStore from 'redux-mock-store'
 
 describe('componentForFields', () => {
   it('constructs fields for each field type', () => {
@@ -15,7 +18,19 @@ describe('componentForFields', () => {
       { name: 'someBooleanField', label: 'Label for boolean field', type: 'boolean' },
     ]
     const Component = componentForFields(fields)
-    const rendered = render(<Component />)
+
+    const mockStore = configureMockStore([])
+
+    const store = {
+      subscribe: f => f,
+      dispatch: f => f,
+      getState: () => ({})
+    }
+    const Form = reduxForm({
+      form: 'test',
+      store: mockStore({})
+    })(() => <Component />)
+    const rendered = render(<Provider store={mockStore({})} ><Form /></Provider>)
     expect(rendered).toMatchSnapshot()
   })
 })
