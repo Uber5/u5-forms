@@ -1,6 +1,6 @@
 {
   "name": "u5-forms",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Efficiently add forms to a react/redux/material-ui app",
   "main": "dist/index.js",
   "scripts": {
