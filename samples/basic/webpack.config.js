@@ -1,7 +1,10 @@
 const path = require('path')
+
+console.log('__dirname', __dirname)
+
 module.exports = {
   entry: {
-    app: './src'
+    app: path.join(__dirname, 'src')
   },
   output: {
     path: './dist',
@@ -10,7 +13,7 @@ module.exports = {
   },
   devServer: {
     inline: true,
-    contentBase: './dist',
+    contentBase: __dirname,
     historyApiFallback: true
   },
   plugins: [],
@@ -26,6 +29,6 @@ module.exports = {
       }
     ]
   },
-  // resolve: { fallback: path.join(__dirname, "node_modules") },
-  // resolveLoader: { fallback: path.join(__dirname, "node_modules") }
+  resolve: { fallback: path.join(__dirname, "../..", "node_modules") },
+  resolveLoader: { fallback: path.join(__dirname, "../..", "node_modules") }
 }

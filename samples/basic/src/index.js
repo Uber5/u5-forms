@@ -6,7 +6,7 @@ import { reducer as formReducer } from 'redux-form'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
-import { createAddForm, componentForFields } from 'u5-forms'
+import { createAddForm, componentForFields } from '../../../src'
 
 injectTapEventPlugin()
 
@@ -17,7 +17,7 @@ const fields = [
   { name: 'someTextField', label: 'Label for text field', type: 'text' },
   { name: 'someNameField', label: 'Label for name field', type: 'name' },
   { name: 'someEmailField', label: 'Label for email field', type: 'email' },
-  { name: 'someIdnoField', label: 'Label for idno field', type: 'idno' },
+  { name: 'someIdnoField', label: 'Label for ID number field', type: 'idno' },
   { name: 'someBooleanField', label: 'Label for boolean field', type: 'boolean' },
 ]
 const FieldsComponent = componentForFields(fields)
