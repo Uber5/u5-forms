@@ -22,11 +22,15 @@ const createAddForm = ({
   form: formName,
   onSubmit,
   validate
-})(({ pristine, submitting, invalid, handleSubmit }) => (<form>
-  {fields}
-  <RaisedButton
-    label={submitLabel} primary={true} type="submit"
-    disabled={pristine || submitting || invalid} />
-</form>)))
+})(({
+  pristine, submitting, invalid, handleSubmit
+}) => (
+  <form onSubmit={handleSubmit}>
+    {fields}
+    <RaisedButton
+      label={submitLabel} primary={true} type="submit"
+      disabled={pristine || submitting || invalid} />
+  </form>
+)))
 
 export { componentForFields, createAddForm }
