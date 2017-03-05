@@ -3,6 +3,8 @@ import * as R from 'ramda'
 import combineComponents from './combine-components'
 import { Field } from 'redux-form'
 import { TextField, Checkbox } from 'redux-form-material-ui'
+import DatePicker from 'material-ui/DatePicker'
+
 import Divider from 'material-ui/Divider'
 import { normalizeSouthAfricanIDNumber, isValidSouthAfricanIDNumber } from 'validator-sa'
 
@@ -14,6 +16,25 @@ const normalizeIDNumberForDisplay = R.when(
 
  const TextFieldWithoutUnderline =
    props => <TextField underlineShow={false} {...props} />
+
+const DateField = props => {
+
+  const inputValue = props.input.value
+  const value = inputValue instanceof Date
+    ? inputValue
+    : ('' + inputValue).length === 0
+      ? null
+      : new Date(Date.parse(inputValue))
+
+  return <DatePicker
+    name={props.input.name}
+    value={value}
+    onChange={(_, v) => {
+      props.input.onChange(v)}
+    }
+  />
+
+}
 
  const fieldCreators = {
    text: f => props => <Field
@@ -28,8 +49,7 @@ const normalizeIDNumberForDisplay = R.when(
      hintText={f.label} type={f.type}
      fullWidth={true} inputMode="latin-name"
    />,
-   date: f => props => <Field name={f.name} component={TextFieldWithoutUnderline}
-     floatingLabelText={f.label} hintText={f.label} type="date"
+   date: f => props => <Field key={f.name} name={f.name} component={DateField}
    />,
    multiline: f => props => <Field
      name={f.name} component={TextFieldWithoutUnderline}
